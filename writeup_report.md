@@ -114,9 +114,9 @@ To train the model, I used an AdamOptimizer optimizer,batch size=128, epochs = 2
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 0.996
-* validation set accuracy of 0.894
-* test set accuracy of 0.876
+* training set accuracy of 0.998
+* validation set accuracy of 0.969
+* test set accuracy of 0.957
 
 If an iterative approach was chosen:
 * The first architecture that was tried is the LENET.
@@ -143,14 +143,30 @@ Here are the results of the prediction:
 ![alt text][image5]
 
 
-The model was able to correctly guess 10 of the 10 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 87%
+The model was able to correctly guess 10 of the 10 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 95.7%
+It look like this classifier can give a perfect prediction if the size is square and size close to that of the training images, because when a image is not square, then the process of changing size will lose the information of features in the image, and this will lower down the accuracy of the classifier.
+
+| Sign Labels       								|
+|:-------------------------------------------------:|
+|Road Work        									|
+|Keep Right     									| 
+|Priority Road										|
+|No Passing for vehicle over 3.5 metric tons		| 
+|Speed Limit(70km/h)								| 
+|No Vehicles										|
+|Keep Right											| 
+|Speed Limit(50km/h)								|
+|Bicycle Crossing									|
+|End ofNo Passing for vehicle over 3.5 metric tons	|
+
+ 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the Ipython notebook.
 ![alt text][image6]
 
-As you can see, the predictor has high confidence on most of the signs, just has a little uncertain on the sign of bicycle crossing.
+As you can see, the predictor has high confidence on most of the signs, just has a little bit uncertain on the sign of speed limit.
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
